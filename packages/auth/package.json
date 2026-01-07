@@ -1,0 +1,24 @@
+{
+  "name": "@dukcapil-smki/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@dukcapil-smki/db": "workspace:*",
+    "@dukcapil-smki/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@dukcapil-smki/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

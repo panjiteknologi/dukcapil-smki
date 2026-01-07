@@ -1,0 +1,3 @@
+{
+  "extends": "@dukcapil-smki/config/tsconfig.base.json"
+}

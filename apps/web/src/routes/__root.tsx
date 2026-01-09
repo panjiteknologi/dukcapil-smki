@@ -1,10 +1,16 @@
-import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import {
+  HeadContent,
+  Outlet,
+  Scripts,
+  createRootRouteWithContext
+} from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
+import { ThemeProvider } from 'next-themes';
 
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from '@/components/ui/sonner';
 
-import Header from "../components/header";
-import appCss from "../index.css?url";
+import Header from '../components/header';
+import appCss from '../index.css?url';
 
 export interface RouterAppContext {}
 
@@ -12,38 +18,44 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
   head: () => ({
     meta: [
       {
-        charSet: "utf-8",
+        charSet: 'utf-8'
       },
       {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1",
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
       },
       {
-        title: "My App",
-      },
+        title: 'Dukcapil SMKI'
+      }
     ],
     links: [
       {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
+        rel: 'stylesheet',
+        href: appCss
+      }
+    ]
   }),
 
-  component: RootDocument,
+  component: RootDocument
 });
 
 function RootDocument() {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
-        <div className="grid h-svh grid-rows-[auto_1fr]">
-          <Header />
-          <Outlet />
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="grid h-svh grid-rows-[auto_1fr]">
+            <Outlet />
+          </div>
+        </ThemeProvider>
         <Toaster richColors />
         <TanStackRouterDevtools position="bottom-left" />
         <Scripts />

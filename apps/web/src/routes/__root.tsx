@@ -9,7 +9,6 @@ import { ThemeProvider } from 'next-themes';
 
 import { Toaster } from '@/components/ui/sonner';
 
-import Header from '../components/header';
 import appCss from '../index.css?url';
 
 export interface RouterAppContext {}

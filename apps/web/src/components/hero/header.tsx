@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { LogInIcon, MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { Link } from '@tanstack/react-router';
 
 import {
   EyeIcon,
@@ -179,18 +180,18 @@ const Header = () => {
             )}
           </Button>
 
-          <Button className="max-sm:hidden">
-            <a href="#">Login</a>
-          </Button>
+          <Link to="/login">
+            <Button className="max-sm:hidden">Login</Button>
+          </Link>
 
           <Tooltip>
             <TooltipTrigger>
-              <Button size="icon" className="sm:hidden">
-                <a href="#">
+              <Link to="/login">
+                <Button size="icon" className="sm:hidden">
                   <LogInIcon />
                   <span className="sr-only">Login</span>
-                </a>
-              </Button>
+                </Button>
+              </Link>
             </TooltipTrigger>
             <TooltipContent>Login</TooltipContent>
           </Tooltip>

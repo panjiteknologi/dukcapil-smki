@@ -10,6 +10,8 @@ import {
 import ProfileDropdown from '@/components/dropdown-profile';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import SearchDialog from '@/components/dialog-search';
+import { SearchIcon } from 'lucide-react';
 
 export const Route = createFileRoute('/dashboard')({
   component: DashboardLayout
@@ -28,22 +30,25 @@ export default function DashboardLayout() {
                 orientation="vertical"
                 className="hidden h-6! sm:block"
               />
-              {/* <SearchDialog
-                  trigger={
-                    <>
-                      <Button variant='ghost' className='hidden !bg-transparent px-1 py-0 font-normal sm:block'>
-                        <div className='text-muted-foreground hidden items-center gap-1.5 text-sm sm:flex'>
-                          <SearchIcon />
-                          <span>Type to search...</span>
-                        </div>
-                      </Button>
-                      <Button variant='ghost' size='icon' className='sm:hidden'>
+              <SearchDialog
+                trigger={
+                  <>
+                    <Button
+                      variant="ghost"
+                      className="hidden bg-transparent! px-1 py-0 font-normal sm:block"
+                    >
+                      <div className="text-muted-foreground hidden items-center gap-1.5 text-sm sm:flex">
                         <SearchIcon />
-                        <span className='sr-only'>Search</span>
-                      </Button>
-                    </>
-                  }
-                /> */}
+                        <span>Type to search...</span>
+                      </div>
+                    </Button>
+                    <Button variant="ghost" size="icon" className="sm:hidden">
+                      <SearchIcon />
+                      <span className="sr-only">Search</span>
+                    </Button>
+                  </>
+                }
+              />
             </div>
             <div className="flex items-center gap-1.5">
               {/* <NotificationDropdown

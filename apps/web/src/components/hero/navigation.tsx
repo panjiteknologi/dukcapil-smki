@@ -2,7 +2,8 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 
-import { useMedia } from 'react-use';
+import pkg from 'react-use';
+const { useMedia } = pkg;
 import { ChevronRightIcon, CircleSmallIcon, MenuIcon } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';

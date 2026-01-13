@@ -2,7 +2,8 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 
-import { useMedia } from 'react-use';
+import pkg from 'react-use';
+
 import { ChevronRightIcon, CircleSmallIcon, MenuIcon } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -31,6 +32,8 @@ import {
 import Logo from '@/assets/logo';
 
 import { cn } from '@/lib/utils';
+
+const { useMedia } = pkg;
 
 type NavigationSection = {
   type: 'section';
